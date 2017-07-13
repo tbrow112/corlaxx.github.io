@@ -15,10 +15,26 @@
 # limitations under the License.
 #
 import webapp2
+import json
+import random
+import urllib
+import urllib2
+import jinja2
+
+env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+    query = self.request.get('query')
+    data = {}
+    if query:
+        base_url = "http://api.giphy.com/v1/gifs/search?"
+        url_params = {'q': query, 'api_key': 'dc6zaTOxFJmzC', 'limit': 32}
+        giphy_json_content = urllib2.urlopen(base_url + urllib.urlencode(url_params)).read()
+        parsed_giphy_dictionary = json.loads(giphy_json_content)
+        data['gifs'] = parsed_giphy_dictionary['data']
+search_template = env.get_template('search.html')
+self.response.write(search_template.render(data))
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
