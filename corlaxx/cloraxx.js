@@ -100,10 +100,10 @@ function prepareCanvas(){
 
 
 //Defines Color Variables
-var colorPurple = "#cb3594";
-var colorGreen = "#659b41";
-var colorYellow = "#ffcf33";
-var colorBrown = "#986928";
+var colorPurple = "#6923c3";
+var colorGreen = "#31b809";
+var colorYellow = "#ffea32";
+var colorBrown = "#5d3600";
 
 var curColor = colorPurple;
 var clickColor = new Array();
@@ -112,38 +112,3 @@ var clickSize = new Array();
 var curSize = "normal";
 var clickTool = new Array();
 var curTool = "crayon";
-
-
-// Creates a canvas element, loads images, adds events, and draws the canvas for the first time.
-init = function () {
-
-  // Load images
-  crayonImage.onload = resourceLoaded;
-  crayonImage.src = "templates/circ.png";
-
-  markerImage.onload = resourceLoaded;
-  markerImage.src = "images/marker-outline.png";
-
-  eraserImage.onload = resourceLoaded;
-  eraserImage.src = "images/eraser-outline.png";
-
-  crayonBackgroundImage.onload = resourceLoaded;
-  crayonBackgroundImage.src = "images/crayon-background.png";
-
-  markerBackgroundImage.onload = resourceLoaded;
-  markerBackgroundImage.src = "images/marker-background.png";
-
-  eraserBackgroundImage.onload = resourceLoaded;
-  eraserBackgroundImage.src = "images/eraser-background.png";
-
-  crayonTextureImage.onload = resourceLoaded;
-  crayonTextureImage.src = "images/crayon-texture.png";
-
-  outlineImage.onload = resourceLoaded;
-  outlineImage.src = "templates/circ.png";
-};
-
-
-init: init
-;
-;
