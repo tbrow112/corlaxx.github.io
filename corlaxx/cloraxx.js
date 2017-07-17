@@ -1,5 +1,6 @@
-var context = document.getElementById('canvas').getContext("2d");
 
+var context = document.getElementById('canvas').getContext("2d");
+var outlineImage = new Image();
 //onload listeners
 document.addEventListener('DOMContentLoaded', function() {
   prepareCanvas();
@@ -9,8 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // add outline
 var crayonImage = new Tool();
 var outlineImage = new Image();
+var heartbutton = document.getElementById('heart');
+heartbutton.addEventListener('click', function() {
+  outlineImage.src = "templates/heart.png";
 
-function prepareCanvas() {
+
+});
 
   crayonImage.src = "images/crayon-outline.png";
 
@@ -27,6 +32,7 @@ function prepareCanvas() {
 
   crayonTextureImage.src = "images/crayon-texture.png";
 
+function prepareCanvas() {
   outlineImage.src = "templates/circ.png";
 }
 
@@ -40,7 +46,7 @@ var curColor = colorPurple;
 var clickColor = new Array();
 //TOOLS
 var clickSize = new Array();
-var curSize = "normal";
+var curSize = "large";
 var clickTool = new Array();
 var curTool = "crayon";
 
