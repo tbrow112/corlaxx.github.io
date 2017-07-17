@@ -8,13 +8,29 @@ document.addEventListener('DOMContentLoaded', function() {
 }, false);
 
 // add outline
+var drawingAreaX = 0;
+var drawingAreaY = 0;
+var drawingAreaWidth = 2000;
+var drawingAreaHeight = 2000;
+
 var heartbutton = document.getElementById('heart');
 heartbutton.addEventListener('click', function() {
   outlineImage.src = "templates/heart.png";
-
-
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 });
 
+var circlebutton = document.getElementById('circle');
+circlebutton.addEventListener('click', function() {
+  outlineImage.src = "templates/circ.png";
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
+});
+
+var greenbutton = document.getElementById('green');
+greenbutton.addEventListener('click', function() {
+  curColor = colorGreen;
+});
 
 function prepareCanvas() {
   outlineImage.src = "templates/circ.png";
@@ -88,10 +104,7 @@ function redraw() {
 
   context.save();
   context.beginPath();
-  var drawingAreaX = 0;
-  var drawingAreaY = 0;
-  var drawingAreaWidth = 2000;
-  var drawingAreaHeight = 2000;
+
   context.rect(drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
   context.clip();
 
