@@ -20,6 +20,12 @@ heartbutton.addEventListener('click', function() {
   context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 });
 
+function clearFunction() {
+  context.clearRect(0,0, canvas.width, canvas.height);
+clickX=[];
+clickY=[];
+}
+
 var circlebutton = document.getElementById('circle');
 circlebutton.addEventListener('click', function() {
   outlineImage.src = "templates/circ.png";
@@ -38,6 +44,10 @@ erasebutton.addEventListener('click', function() {
   curTool = "eraser";
 });
 
+var yellowbutton = document.getElementById('yellow');
+yellowbutton.addEventListener('click', function() {
+  curColor = colorYellow;
+});
 
 function prepareCanvas() {
   outlineImage.src = "templates/circ.png";
@@ -48,6 +58,7 @@ var colorPurple = "#6923c3";
 var colorGreen = "#31b809";
 var colorYellow = "#ffea32";
 var colorBrown = "#5d3600";
+
 
 var curColor = colorPurple;
 var clickColor = new Array();
@@ -129,7 +140,7 @@ function redraw() {
       context.lineTo(clickX[i], clickY[i]);
       context.closePath();
       context.strokeStyle = clickColor[i];
-      context.lineWidth = radius;
+      context.lineWidth = 15;
       context.stroke();
     }
     context.globalAlpha = 1;
