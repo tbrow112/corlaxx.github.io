@@ -30,7 +30,14 @@ circlebutton.addEventListener('click', function() {
 var greenbutton = document.getElementById('green');
 greenbutton.addEventListener('click', function() {
   curColor = colorGreen;
+  curTool = "crayon";
+
 });
+var erasebutton = document.getElementById('white');
+erasebutton.addEventListener('click', function() {
+  curTool = "eraser";
+});
+
 
 function prepareCanvas() {
   outlineImage.src = "templates/circ.png";
@@ -95,7 +102,7 @@ function addClick(x, y, dragging) {
   } else {
     clickColor.push(curColor);
   }
-  clickColor.push(curColor);
+  //clickColor.push(curColor);
   clickSize.push(curSize);
 }
 
