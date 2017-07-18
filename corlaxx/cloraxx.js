@@ -49,6 +49,16 @@ yellowbutton.addEventListener('click', function() {
   curColor = colorYellow;
 });
 
+var purplebutton = document.getElementById('purple');
+yellowbutton.addEventListener('click', function() {
+  curColor = colorPurple;
+});
+
+var brownbutton = document.getElementById('brown');
+yellowbutton.addEventListener('click', function() {
+  curColor = colorBrown;
+});
+
 function prepareCanvas() {
   outlineImage.src = "templates/circ.png";
 }
@@ -159,7 +169,7 @@ function prepareCanvas(){
 
   markerImage.src = "images/marker-outline.png";
 
-  eraserImage.src = "images/eraser-outline.png";
+  eraserImage.src = "images/eraser.png";
 
   crayonBackgroundImage.src = "images/crayon-background.png";
 
