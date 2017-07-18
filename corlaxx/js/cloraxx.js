@@ -28,7 +28,7 @@ clickY=[];
 
 var circlebutton = document.getElementById('circle');
 circlebutton.addEventListener('click', function() {
-  outlineImage.src = "templates/circ.png";
+  outlineImage.src = "/templates/circ.png";
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 });
@@ -151,28 +151,6 @@ function redraw() {
 
 }
  // end redraw function
-// add outline
-var outlineImage = new Image();
-function prepareCanvas(){
-
-  crayonImage.src = "images/crayon-outline.png";
-
-  markerImage.src = "images/marker-outline.png";
-
-  eraserImage.src = "images/eraser-outline.png";
-
-  crayonBackgroundImage.src = "images/crayon-background.png";
-
-  markerBackgroundImage.src = "images/marker-background.png";
-
-  eraserBackgroundImage.src = "images/eraser-background.png";
-
-
-  crayonTextureImage.src = "images/crayon-texture.png";
-
-  outlineImage.src = "templates/circ.png";
-}
-
 
 //Defines Color Variables
 var colorPurple = "#6923c3";
