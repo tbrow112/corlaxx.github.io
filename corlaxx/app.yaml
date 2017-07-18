@@ -8,10 +8,17 @@ handlers:
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
+
 - url: /templates
   static_dir: templates
+  
+- url: /js
+  static_dir: js
+
 - url: .*
   script: main.app
+
+
 
 libraries:
 - name: webapp2
