@@ -39,6 +39,8 @@ greenbutton.addEventListener('click', function() {
   curTool = "crayon";
 
 });
+
+
 var erasebutton = document.getElementById('white');
 erasebutton.addEventListener('click', function() {
   curTool = "eraser";
