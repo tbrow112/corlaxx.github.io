@@ -26,7 +26,13 @@ class MainHandler(webapp2.RequestHandler):
     def post(self):  # Here's the new POST method in the MainHandler.
         self.response.out.write('You have submitted your madlib')
 
+class WelcomeHandler(webapp2.RequestHandler):
+    def get(self):
+        main_template = env.get_template('welcome.html')
+        self.response.out.write(main_template.render())
+
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/color', MainHandler),
+    ('/', WelcomeHandler)
 ], debug=True)

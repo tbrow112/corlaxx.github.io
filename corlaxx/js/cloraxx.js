@@ -20,6 +20,8 @@ heartbutton.addEventListener('click', function() {
   context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 });
 
+
+
 function clearFunction() {
   context.clearRect(0,0, canvas.width, canvas.height);
 clickX=[];
@@ -33,12 +35,27 @@ circlebutton.addEventListener('click', function() {
   context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 });
 
+var spiralbutton = document.getElementById('spiral');
+spiralbutton.addEventListener('click', function() {
+  outlineImage.src = "/templates/spiral.png";
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
+});
+
 var greenbutton = document.getElementById('green');
 greenbutton.addEventListener('click', function() {
   curColor = colorGreen;
   curTool = "crayon";
 
 });
+
+var bluebutton = document.getElementById('blue');
+bluebutton.addEventListener('click', function() {
+  curColor = colorBlue;
+  curTool = "crayon";
+
+});
+
 var erasebutton = document.getElementById('white');
 erasebutton.addEventListener('click', function() {
   curTool = "eraser";
@@ -49,18 +66,43 @@ yellowbutton.addEventListener('click', function() {
   curColor = colorYellow;
 });
 
+var redbutton = document.getElementById('red');
+redbutton.addEventListener('click', function() {
+  curColor = colorRed;
+});
+
 var purplebutton = document.getElementById('purple');
-yellowbutton.addEventListener('click', function() {
+purplebutton.addEventListener('click', function() {
   curColor = colorPurple;
 });
 
 var brownbutton = document.getElementById('brown');
-yellowbutton.addEventListener('click', function() {
+brownbutton.addEventListener('click', function() {
   curColor = colorBrown;
 });
 
+var orangebutton = document.getElementById('orange');
+orangebutton.addEventListener('click', function() {
+  curColor = colorOrange;
+});
+
+var darkblue = document.getElementById('darkblue');
+darkblue.addEventListener('click', function() {
+  curColor = colorDarkblue;
+});
+
+var black = document.getElementById('black');
+black.addEventListener('click', function() {
+  curColor = colorBlack;
+});
+
+var pink = document.getElementById('pink');
+pink.addEventListener('click', function() {
+  curColor = colorPink;
+});
+
 function prepareCanvas() {
-  outlineImage.src = "templates/circ.png";
+  outlineImage.src = "templates/blank.png";
 }
 
 //Defines Color Variables
@@ -68,6 +110,12 @@ var colorPurple = "#6923c3";
 var colorGreen = "#31b809";
 var colorYellow = "#ffea32";
 var colorBrown = "#5d3600";
+var colorBlue = "#b3e6ff";
+var colorRed = "#ff0000";
+var colorOrange = "#ff8533";
+var colorDarkblue = "#0000cc";
+var colorBlack = "#00131a";
+var colorPink = "#ff99e6";
 
 
 var curColor = colorPurple;
@@ -150,7 +198,7 @@ function redraw() {
       context.lineTo(clickX[i], clickY[i]);
       context.closePath();
       context.strokeStyle = clickColor[i];
-      context.lineWidth = 15;
+      context.lineWidth = 25;
       context.stroke();
     }
     context.globalAlpha = 1;
@@ -190,7 +238,7 @@ var colorGreen = "#31b809";
 var colorYellow = "#ffea32";
 var colorBrown = "#5d3600";
 
-var curColor = colorPurple;
+var curColor = colorBlack;
 var clickColor = new Array();
 //TOOLS
 var clickSize = new Array();
