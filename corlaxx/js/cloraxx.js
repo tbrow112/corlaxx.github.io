@@ -20,6 +20,8 @@ heartbutton.addEventListener('click', function() {
   context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 });
 
+
+
 function clearFunction() {
   context.clearRect(0,0, canvas.width, canvas.height);
 clickX=[];
@@ -29,6 +31,13 @@ clickY=[];
 var circlebutton = document.getElementById('circle');
 circlebutton.addEventListener('click', function() {
   outlineImage.src = "/templates/circ.png";
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
+});
+
+var spiralbutton = document.getElementById('spiral');
+spiralbutton.addEventListener('click', function() {
+  outlineImage.src = "/templates/spiral.png";
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 });
@@ -93,7 +102,7 @@ pink.addEventListener('click', function() {
 });
 
 function prepareCanvas() {
-  outlineImage.src = "templates/circ.png";
+  outlineImage.src = "templates/blank.png";
 }
 
 //Defines Color Variables
@@ -105,7 +114,7 @@ var colorBlue = "#b3e6ff";
 var colorRed = "#ff0000";
 var colorOrange = "#ff8533";
 var colorDarkblue = "#0000cc";
-var colorBlack = "#000000";
+var colorBlack = "#00131a";
 var colorPink = "#ff99e6";
 
 
