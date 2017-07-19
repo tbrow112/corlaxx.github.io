@@ -11,14 +11,15 @@ handlers:
 
 - url: /templates
   static_dir: templates
-  
+
 - url: /js
   static_dir: js
 
+- url: /stylesheet
+  static_dir: style
+  
 - url: .*
   script: main.app
-
-
 
 libraries:
 - name: webapp2
